@@ -1,0 +1,26 @@
+
+
+npm init -y
+    - adicionar o type modules
+    - adicionar o start nodemon app.js (significa que vou usar o nodemon para rodar a api)
+    (obs: o nodemon é a msm coisa que apenas startar, só que ele atualiza em tempo real o que mudamos na API)
+
+npm i express nodemon
+    - pacotes que vamos utilizar
+
+ignorar o node_modules (.gitignore)
+    - não mandar o node_modules para o repositorio (arquivo desnecessario)
+
+END-POINT
+    - verbo + URL completa
+    - o que é = end-point é uma funcionalidade que a API disponibiliza em um verbo junto com uma rota, cada conjunto permite que vinculamos uma funcionalidade no site (a partir da criatividade )
+    - resumindo o end-point é uma funcionalidade da API
+    
+    
+    significado dos verbos
+
+        - GET = pegar/ler
+        - POST = criar
+        - PUT = substituir
+        - DELETE = apagar
+
