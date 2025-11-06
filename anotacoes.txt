@@ -18,9 +18,13 @@ END-POINT
     
     
     significado dos verbos
-
         - GET = pegar/ler
         - POST = criar
         - PUT = substituir
         - DELETE = apagar
 
+path segmentado
+    é quando o caminho (path) de uma URL é dividido em partes (segmentos) que indicam recursos diferentes.
+
+path versionado
+    é quando a versão da API é colocada dentro do path da URL.
