@@ -60,7 +60,32 @@ servidor.get('/calculadoraDividir/:n1/:n2', (req,resp) => {
     resp.send(`A divisão de ${n1} com ${n2} é igual a ${divisao}`)
 })
 
+servidor.get('/v2/calculadoraSomar', (req,resp) => {
+    let n1 = Number(req.query.n1);
+    let n2 = Number(req.query.n2);
+    let soma = n1 + n2;
+    resp.send(`A soma de ${n1} com ${n2} é igual a ${soma}`)
+})
 
+servidor.get('/v2/calculadoraSubtrair', (req,resp) =>{
+    let n1 = Number(req.query.n1);
+    let n2 = Number(req.query.n2);
+    let sub = n1 - n2;
+    resp.send(`A subtração de ${n1} e ${n2} é igual a ${sub} `)
+})
 
+servidor.get('/v2/calculadoraMultiplicar', (req,resp) =>{
+    let n1 = Number(req.query.n1);
+    let n2 = Number(req.query.n2);
+    let multiplicar = n1 * n2;
+    resp.send(`A multiplicação de ${n1} com ${n2} é igual a ${multiplicar}`)
+})
+
+servidor.get('/v2/calculadoraDividir', (req,resp) =>{
+    let n1 = Number(req.query.n1);
+    let n2 = Number(req.query.n2);
+    let divisao = n1 / n2;
+    resp.send(`A divisão de ${n1} e ${n2} é igual a ${divisao}` )
+})
 //vinculando a api com uma porta
 servidor.listen(5001, () => console.log("API SUBIU NA PORTA 5001"));

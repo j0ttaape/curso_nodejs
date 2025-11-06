@@ -28,3 +28,8 @@ path segmentado
 
 path versionado
     é quando a versão da API é colocada dentro do path da URL.
+
+operador ??
+    usamos no parametro de query quando o parametro não estiver definido vai aparecer o conteudo logo apos o operador
+    exemplo: let pessoa =  req.query.nome ?? 'você' 
+        nesse exemplo da pra ver o que acontece quando o parametro nome for invalido.
