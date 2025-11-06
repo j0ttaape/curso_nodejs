@@ -149,5 +149,27 @@ servidor.post('/v3/nomes', (req,resp) => {
     resp.send(`Os nomes são ${nome}`)
 })
 
+servidor.post('/v3/loja/pedidos', (req,resp)=>{
+    let total = Number(req.body.total);
+    let parcelas = Number(req.body.parcelas);
+    let cupom = Number(req.query.cupom)
+
+    if(parcelas > 1){
+        let juros = total * 0.05;
+        total += juros;
+    }
+
+    if(cupom == 'QUERO100'){
+        total -= 100;
+    }
+
+    resp.send(`O valor do pedido é de ${total}`)
+
+})
+
+
+
+
+
 
 servidor.listen(5001, () => console.log("API SUBIU NA PORTA 5001"));
