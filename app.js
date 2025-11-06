@@ -5,17 +5,16 @@ import express from 'express'
 
 //rodando o express
 const servidor = express();
+servidor.use(express.json()); 
 
-
-//criando endpoint
+//codigo do endpoint  
 
 servidor.get('/helloword', (req, resp) => {
-    //codigo do endpoint
     resp.send('helloword mané')
 })
 
 servidor.get('/mensagem/boasvindas', (req, resp) => {
-    //codigo do endpoint
+
     resp.send('olá sejam bem vindos')
 })
 
@@ -32,6 +31,7 @@ servidor.get('/mensagem/ocupado/recado', (req,resp) => {
 })
 
 
+//parametro de rota
 servidor.get('/calculadora/:n1/:n2', (req,resp) =>{
     let n1 = Number(req.params.n1);
     let n2 = Number(req.params.n2);
@@ -60,6 +60,8 @@ servidor.get('/calculadoraDividir/:n1/:n2', (req,resp) => {
     resp.send(`A divisão de ${n1} com ${n2} é igual a ${divisao}`)
 })
 
+
+//parametro de query
 servidor.get('/v2/calculadoraSomar', (req,resp) => {
     let n1 = Number(req.query.n1);
     let n2 = Number(req.query.n2);
@@ -87,5 +89,20 @@ servidor.get('/v2/calculadoraDividir', (req,resp) =>{
     let divisao = n1 / n2;
     resp.send(`A divisão de ${n1} e ${n2} é igual a ${divisao}` )
 })
-//vinculando a api com uma porta
+
+
+// parametro de corpo
+
+servidor.post('/media', (req,resp) =>{
+    let nota1 = Number(req.body.nota1);
+    let nota2 = Number(req.body.nota2);
+    let nota3 = Number(req.body.nota3);
+    let media = (nota1 + nota2 + nota3) / 3;
+    resp.send(`A média das notas é igual a ${media}`)
+})
+
+
+servidor.post('/v3/calculadoraSomar', (req,resp) =>{
+    let 
+})
 servidor.listen(5001, () => console.log("API SUBIU NA PORTA 5001"));
