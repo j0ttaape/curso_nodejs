@@ -103,6 +103,51 @@ servidor.post('/media', (req,resp) =>{
 
 
 servidor.post('/v3/calculadoraSomar', (req,resp) =>{
-    let 
+    let n1 = Number(req.body.n1);
+    let n2 = Number(req.body.n2);
+    let soma = n1 + n2;
+    resp.send(`A soma de ${n1} e ${n2} é igual a ${soma}`)
 })
+
+servidor.post('/v3/calculadoraSubtrair', (req,resp) =>{
+    let n1 = Number(req.body.n1);
+    let n2 = Number(req.body.n2);
+    let sub = n1 - n2;
+    resp.send(`A subtração de ${n1} e ${n2} é igual a ${sub}`)
+})
+
+servidor.post('/v3/calculadoraMultiplicar', (req,resp) =>{
+    let n1 = Number(req.body.n1);
+    let n2 = Number(req.body.n2);
+    let multiplicar = n1 * n2;
+    resp.send(`A multiplicação de ${n1} e ${n2} é igual a ${multiplicar}`)
+})
+
+servidor.post('/v3/calculadoraDividir', (req,resp) => {
+    let n1 = Number(req.body.n1);
+    let n2 = Number(req.body.n2);
+    let divisao = n1 / n2;
+    resp.send(`A divisão de ${n1} e ${n2} é igual a ${divisao}`)
+})
+
+//parametro de corpo com vetor
+
+servidor.post('/v3/dobro', (req,resp) => {
+    let nums = req.body.numeros;
+
+    let nums2 = [];
+    for(let i = 0; i < nums.length; i++){
+        nums2[i] = nums [i] *2;
+    }
+    resp.send(`O dobro dos números são ${nums2}`)
+})
+
+
+servidor.post('/v3/nomes', (req,resp) => {
+    let nome = req.body.nomes
+
+    resp.send(`Os nomes são ${nome}`)
+})
+
+
 servidor.listen(5001, () => console.log("API SUBIU NA PORTA 5001"));
